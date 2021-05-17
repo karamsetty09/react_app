@@ -1,5 +1,6 @@
 
-import './App.css';
+import "./App.css";
+import venkata from "./venkata.jpg";
 
 //function to display Header - Always use capital for starting of function name
 function Header(props){
@@ -15,6 +16,7 @@ function Main(props){
   return(
   <main>
     <h3>Welcome to my {props.adjective} Portfolio</h3>
+    <img src={venkata} height={200} alt={"Sandeep's Picture"}/>
     <ul style={{textAlign: "left" }}>
       {props.skills.map((skill) => (
         <li key={skill.id}>{skill.title}</li>
