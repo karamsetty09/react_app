@@ -1,20 +1,21 @@
 {
   "files": {
     "main.css": "/react_app/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/react_app/static/js/main.390e2995.chunk.js",
-    "main.js.map": "/react_app/static/js/main.390e2995.chunk.js.map",
+    "main.js": "/react_app/static/js/main.a7489d75.chunk.js",
+    "main.js.map": "/react_app/static/js/main.a7489d75.chunk.js.map",
     "runtime-main.js": "/react_app/static/js/runtime-main.d87515e8.js",
     "runtime-main.js.map": "/react_app/static/js/runtime-main.d87515e8.js.map",
     "static/js/2.5b18fd62.chunk.js": "/react_app/static/js/2.5b18fd62.chunk.js",
     "static/js/2.5b18fd62.chunk.js.map": "/react_app/static/js/2.5b18fd62.chunk.js.map",
     "index.html": "/react_app/index.html",
     "static/css/main.9d5b29c0.chunk.css.map": "/react_app/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.5b18fd62.chunk.js.LICENSE.txt": "/react_app/static/js/2.5b18fd62.chunk.js.LICENSE.txt"
+    "static/js/2.5b18fd62.chunk.js.LICENSE.txt": "/react_app/static/js/2.5b18fd62.chunk.js.LICENSE.txt",
+    "static/media/venkata.dc4efd25.jpg": "/react_app/static/media/venkata.dc4efd25.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d87515e8.js",
     "static/js/2.5b18fd62.chunk.js",
     "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.390e2995.chunk.js"
+    "static/js/main.a7489d75.chunk.js"
   ]
 }
