@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-essentials"]=this["webpackJsonpreact-essentials"]||[]).push([[0],{3:function(e,t,a){"use strict";a.r(t);var n=a(0),s=a.n(n),r=a(2),c=a.n(r);a(8);c.a.render(s.a.createElement("h1",{style:{color:"blue"}},"Venkata Sandeep Kumar. Karamsetty"),document.getElementById("root"))},8:function(e,t,a){}},[[3,1,2]]]);
+//# sourceMappingURL=main.18eb85af.chunk.js.map
