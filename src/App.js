@@ -46,13 +46,26 @@ const skills = [
 
 const skillObjects = skills.map((skill, i) => ({id: i, title:skill}));
 
+//How conditional rendering works in javascript display different components based on true and false
+function SecretComponent(){
+  return <h1> secret information for authorized users only</h1>
+}
+
+function RegularComponent(){
+  return <h1>Everyone can see this element</h1>
+}
+
+
+
 //"" -> Used for strings of props data  {} ->
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Header name="Venkata Sandeep Kumar Karamsetty"/> 
       <Main adjective="Amazing" skills={skillObjects}/>
       <Footer year={new Date().getFullYear()}/>
+      { props.authorized ? <SecretComponent /> : <RegularComponent /> }
+      
     </div>
   );
 }
