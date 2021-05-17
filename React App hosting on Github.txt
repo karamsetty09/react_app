@@ -19,7 +19,7 @@ command 4: git status
 
 command 5: git add .
 
-command 6: git commit "Message"
+command 6: git commit -m "Message"
 
 command 7: npm run deploy
 
