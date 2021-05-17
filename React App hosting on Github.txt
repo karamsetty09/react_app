@@ -1,0 +1,26 @@
+create your application in your folder in System
+got to folder and click npm start to check built application
+Add lines of code in: package.json
+"homepage": "http://karamsetty09.github.io/app_name",
+
+in scripts:
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build",
+
+create new repossitory with out readme file on the github
+Open terminal
+command 1: npm install gh-pages --save-dev
+
+Command 2: git init
+
+command 3: git remote add origin https://karamsetty09.github.io/react_app.git
+
+command 4: git status
+
+command 5: git add .
+
+command 6: git commit "Message"
+
+command 7: npm run deploy
+
+command 8: git push -u origin master
