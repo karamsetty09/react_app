@@ -1,72 +1,46 @@
 
-import "./App.css";
-import venkata from "./venkata.jpg";
+import React, { useState, useEffect } from 'react';
 
-//function to display Header - Always use capital for starting of function name
-function Header(props){
-  return(
-    <header>
-      <h1>{props.name}'s Portfolio</h1>
-    </header>
-  );
-}
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import MainHeader from './components/MainHeader/MainHeader';
 
-//function to display main
-function Main(props){
-  return(
-  <main>
-    <h3>Welcome to my {props.adjective} Portfolio</h3>
-    <img src={venkata} height={200} alt={"Sandeep's Picture"}/>
-    <ul style={{textAlign: "left" }}>
-      {props.skills.map((skill) => (
-        <li key={skill.id}>{skill.title}</li>
-      ))}
-    </ul>
-  </main>
-  );
-}
+function App() {
 
-//function to display footer
-function Footer(props){
-  return(
-    <footer>
-      <h6> Copyright @ {props.year} </h6>
-    </footer>
-  );
-}
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-//Playing with data and dispaly on React Application
-const skills = [
-  "HTML",
-  "CSS",
-  "PHP",
-  "javascript",
-  "React"
-]
+  useEffect(() => {
+    // updating locastorage 
+  const storedUserLoggedInInformation = localStorage.getItem('isLoggedIn');
+  if(storedUserLoggedInInformation === '1'){
+    setIsLoggedIn(true);
+  }
+  }, [])
 
-const skillObjects = skills.map((skill, i) => ({id: i, title:skill}));
+  const loginHandler = (email, password) => {
+    // We should of course check email and password
+    // But it's just a dummy/ demo anyways
 
-//How conditional rendering works in javascript display different components based on true and false
-function SecretComponent(){
-  return <h1> secret information for authorized users only</h1>
-}
+    // localStorage provided by browsers.
+    // updating local storage by clicking on login button
+    localStorage.setItem('isLoggedIn', '1');
+    setIsLoggedIn(true);
+  };
 
-function RegularComponent(){
-  return <h1>Everyone can see this element</h1>
-}
+  const logoutHandler = () => {
+    // Removing the local storage for logout.
+    localStorage.removeItem('isLoggedIn');
+    setIsLoggedIn(false);
+  };
 
-
-
-//"" -> Used for strings of props data  {} ->
-function App(props) {
   return (
-    <div className="App">
-      <Header name="Venkata Sandeep Kumar Karamsetty"/> 
-      <Main adjective="Amazing" skills={skillObjects}/>
-      <Footer year={new Date().getFullYear()}/>
-      { props.authorized ? <SecretComponent /> : <RegularComponent /> }
-      
-    </div>
+    <React.Fragment>
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <main>
+        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {isLoggedIn && <Home onLogout={logoutHandler} />}
+      </main>
+    </React.Fragment>
   );
 }
 
