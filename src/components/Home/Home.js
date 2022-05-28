@@ -7,6 +7,7 @@ import AuthContext from '../../store/auth-context';
 import Header from '../../Components/Layout/Header';
 import Meals from '../../Components/Meals/Meals';
 import Cart from '../../Components/Cart/Cart';
+import CartProvider from '../../store/CartProvider';
 
 
 const Home = (props) => {
@@ -22,7 +23,7 @@ const Home = (props) => {
     setCartIsShown(false);
   }
   return (
-    <div>
+    <CartProvider>
       {cartIsShown && <Cart onCloseCart={hideCartHandler}/>}
       <Header onShowCart={showCartHandler}/>
       <main>
@@ -36,7 +37,7 @@ const Home = (props) => {
       
      </Card>  */}
     
-    </div>
+    </CartProvider>
   );
 };
 
