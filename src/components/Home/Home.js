@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import Button from '../UI/Button/Button';
 
 import Card from '../UI/Card/Card';
@@ -6,12 +6,26 @@ import classes from './Home.module.css';
 import AuthContext from '../../store/auth-context';
 import Header from '../../Components/Layout/Header';
 import Meals from '../../Components/Meals/Meals';
+import Cart from '../../Components/Cart/Cart';
+import CartProvider from '../../store/CartProvider';
+
 
 const Home = (props) => {
   const authCtx = useContext(AuthContext);
+
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  }
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  }
   return (
-    <div>
-      <Header />
+    <CartProvider>
+      {cartIsShown && <Cart onCloseCart={hideCartHandler}/>}
+      <Header onShowCart={showCartHandler}/>
       <main>
       <Meals />
       </main>
@@ -23,7 +37,7 @@ const Home = (props) => {
       
      </Card>  */}
     
-    </div>
+    </CartProvider>
   );
 };
 
